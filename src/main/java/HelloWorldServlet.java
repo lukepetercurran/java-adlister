@@ -5,22 +5,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
-public class HelloWorldServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        String name = req.getParameter("name");
-        res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-        if(name == null) {
-            out.println("<h1 style=\'color:hotpink;\'>Hello, World!</h1>");
-        } else {
-            out.println("<h1 style=\'color:hotpink;\'> Hello, " + name + "!</h1>");
-        }
-    }
-
+//
+//@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
+//public class HelloWorldServlet extends HttpServlet {
+//
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+//        String name = req.getParameter("name");
+//        res.setContentType("text/html");
+//        PrintWriter out = res.getWriter();
+//        if(name == null) {
+//            out.println("<h1 style=\'color:hotpink;\'>Hello, World!</h1>");
+//        } else {
+//            out.println("<h1 style=\'color:hotpink;\'> Hello, " + name + "!</h1>");
+//        }
+//    }
+// // Lecture
 
 
 
@@ -29,9 +29,9 @@ public class HelloWorldServlet extends HttpServlet {
     public class PageRefreshCounter extends HttpServlet {
         int counter = 1;
         @Override
-                protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException){
-    resp.setContentType("text/html");
-    PrintWriter anyName = resp.getWriter();
+                protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException){
+    res.setContentType("text/html");
+    PrintWriter anyName = res.getWriter();
     if (req.getParamter("reset") != null){
         counter = 1;
             }
@@ -39,6 +39,5 @@ public class HelloWorldServlet extends HttpServlet {
 
        }
     }
-}
+//}
 
-//    Git push origin servlets-exercise //to push
